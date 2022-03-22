@@ -30,6 +30,7 @@ create_symlinks(){
 
 ########## SET DEFAULT CHELL TO ZSH ##################
 chsh -s /bin/zsh
+sudo pacman -S starship
 sudo git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 create_symlinks "ZSH" $(pwd)/zsh/.zshrc $ZSH
 

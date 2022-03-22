@@ -1,9 +1,7 @@
 # dotfiles
 
-# install neovim 
+## Install
 
-- sudo pacman -S neovim
-- git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-- nvim +PluginInstall +qall
-- ln -s [dotfiles]/nvim ~/.config/nvim
+setup.sh assumes ArcoLinux & Qtile fresh install 
+
 
