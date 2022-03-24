@@ -31,10 +31,9 @@ create_symlinks(){
 
 ########## SET DEFAULT CHELL TO ZSH ##################
 chsh -s /bin/zsh
-sudo pacman -S starship
-sudo git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+sudo pacman -S starship --noconfirm
 create_symlinks "ZSH" $(pwd)/zsh/.zshrc $ZSH
-
+zsh
 sudo git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
@@ -53,12 +52,12 @@ create_symlinks "PICOM" $(pwd)/picom/picom.conf $PICOM
 create_symlinks "SXHKD" $(pwd)/sxhkd/sxhkdrc $SXHKD
 
 ############# ROFI ####################
-# mkdir temp
-# cd temp
-# git clone --depth=1 https://github.com/adi1090x/rofi.git
-# cd rofi
-# chmod +x setup.sh
-# ./setup.sh
+mkdir temp
+cd temp
+git clone --depth=1 https://github.com/adi1090x/rofi.git
+cd rofi
+chmod +x setup.sh
+./setup.sh
 ### create_symlinks "SXHKD" $(pwd)/sxhkd/sxhkdrc $SXHKD
 
 
