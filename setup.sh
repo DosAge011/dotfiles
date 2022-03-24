@@ -30,10 +30,16 @@ create_symlinks(){
 
 
 ########## SET DEFAULT CHELL TO ZSH ##################
-chsh -s /bin/zsh
-sudo pacman -S starship --noconfirm
-create_symlinks "ZSH" $(pwd)/zsh/.zshrc $ZSH
-zsh
+      # need to switch into zsh and have it running for the clones to be loaded properly
+      # doing this here makes sense to avoid any further frustrations.
+if [ "$SHELL" -eq "/bin/bash" ]; then
+   chsh -s /bin/zsh
+   sudo pacman -S starship --noconfirm
+   create_symlinks "ZSH" $(pwd)/zsh/.zshrc $ZSH
+   loginctl | grep seat0 | awk '{print $3}' | loginctl terminate-user
+   exit;
+fi
+
 sudo git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
