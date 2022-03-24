@@ -34,7 +34,7 @@ chsh -s /bin/zsh
 sudo pacman -S starship --noconfirm
 create_symlinks "ZSH" $(pwd)/zsh/.zshrc $ZSH
 source $ZSH
-loginctl | grep seat0 | awk '{print $3}' | loginctl terminate-user
+#loginctl | grep seat0 | awk '{print $3}' | loginctl terminate-user
 
 
 sudo git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
