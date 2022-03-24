@@ -60,7 +60,7 @@ super + F12
 
 #Rofi Alternate
 super + d
-    rofi -show drun
+    $HOME/.config/rofi/launchers/colorful/launcher.sh
 
 
 #Atom

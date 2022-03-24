@@ -7,6 +7,7 @@ ZSH="$HOME/.zshrc"
 NVIM="$HOME/.config/nvim"
 PICOM="$HOME/.config/qtile/scripts/picom.conf"
 SXHKD="$HOME/.config/qtile/sxhkd/sxhkdrc"
+ROFI="$HOME/.config/rofi/launchers/colorful/launcher.sh"
 
 
 create_symlinks(){
@@ -34,9 +35,6 @@ chsh -s /bin/zsh
 sudo pacman -S starship --noconfirm
 create_symlinks "ZSH" $(pwd)/zsh/.zshrc $ZSH
 source $ZSH
-#loginctl | grep seat0 | awk '{print $3}' | loginctl terminate-user
-
-
 sudo git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
@@ -61,13 +59,13 @@ git clone --depth=1 https://github.com/adi1090x/rofi.git
 cd rofi
 chmod +x setup.sh
 ./setup.sh
-### create_symlinks "SXHKD" $(pwd)/sxhkd/sxhkdrc $SXHKD
+create_symlinks "ROFI" $(pwd)/rofi/launcher.sh $ROFI
 
 
 
 
 
-
+loginctl | grep seat0 | awk '{print $3}' | loginctl terminate-user
 
 
 
