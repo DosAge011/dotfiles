@@ -61,13 +61,13 @@ chmod +x setup.sh
 ./setup.sh
 create_symlinks "ROFI" $(pwd)/rofi/launcher.sh $ROFI
 
-
-
+############### msi-perkeyrgb ######################
+sudo pacman -S msi-perkeyrgb
 
 
 loginctl | grep seat0 | awk '{print $3}' | loginctl terminate-user
 
-
+# chosen9483berry / rmc9fnpgk3
 
 
 
